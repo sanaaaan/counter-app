@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>カウントアプリ</title>
+  <style>
+    body { front-family: sans-serif; text-align: center; padding-top: 50px;}
+    h1 { front-size: 48px; margin: 20px; }
+    button { front-size: 18px; padding: 10px 20px; margin: 5px; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+    <h2>カウントアプリ</h2>
+    <!-- カウント数を表示する場所 -->
+     <h1 id="count">0</h1>
+
+     <!--　ボタン -->
+     <button id="minus-btn">-1</butonn>
+     <button id="reset-btn">リセット</button>
+     <button id="plus-btn">+1</button>
+
+     <script>
+        //1.状態（データ）を管理する変数
+        let count = 0;
+
+        //2.画面の要素（DOM)を取得する
+        const countDisplay = document.getElementById('count');
+        const plusBtn = document.getElementById('plus-btn');
+        const minusBtn = document.getElementById('minus-btn');
+        const resetBtn = document.getElementById('reset-btn');
+
+        //3.イベントリスナー（監視員）を設定する
+        plusBtn.addEventListener('click', () => {
+          count++;
+          countDisplay.textContent = count; //画面（DOM)の書き換え
+        });
+
+        minusBtn.addEventListener('click', () => {
+          count--;
+          countDisplay.textContent = count;
+        });
+
+        resetBtn.addEventListener('click', () => {
+          count = 0;
+          countDisplay.textContent = count;
+        });
+     </script>
+</body>
+</html>
